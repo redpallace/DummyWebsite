@@ -1,6 +1,6 @@
 ![image](https://github.com/user-attachments/assets/f1309563-c560-4dde-bb5c-37d1c15ca3b9)
 
-Pertama, kita lihat tampilan portal login anggota dengan dua kolom sederhana: Username dan Password.
+Pertama, kita lihat tampilan portal login anggota dengan dua kolom sederhana: Username dan Password dari sebuah website.
 
 Selanjutnya, kita masukkan karakter petik tunggal (') di kolom Username dan menekan tombol Login.
 
