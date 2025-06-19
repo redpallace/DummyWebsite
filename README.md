@@ -6,7 +6,7 @@ Selanjutnya, kita masukkan karakter petik tunggal (') di kolom Username dan mene
 
 Dalam hitungan detik, server mengembalikan SQL error, menandakan bahwa input kita langsung disuntikkan ke dalam query tanpa disanitasi.
 
-Error ini memperlihatkan bahwa aplikasi rentan terhadap SQL Injection—penyerang bisa memanipulasi perintah SQL sesuai keinginannya.
+Error ini memperlihatkan bahwa aplikasi rentan terhadap SQL Injection, penyerang bisa memanipulasi perintah SQL sesuai keinginannya.
 
 Untuk membuktikan dampaknya, kita beralih ke terminal dan menjalankan sqlmap. Pertama, sqlmap mendeteksi bahwa database yang digunakan adalah MySQL.
 
