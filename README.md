@@ -1,23 +1,37 @@
 ![image](https://github.com/user-attachments/assets/f1309563-c560-4dde-bb5c-37d1c15ca3b9)
 
-Pertama, kita lihat tampilan portal login anggota dengan dua kolom sederhana: Username dan Password dari sebuah website.
+Kita mulai dengan tampilan portal login anggota dari sebuah website yang terlihat biasa: hanya dua kolom Username dan Password, tanpa tanda bahaya.
 
-Selanjutnya, kita masukkan karakter petik tunggal (') di kolom Username dan menekan tombol Login.
+Di kolom Username, kita ketik karakter petik tunggal (') dan klik Login.
 
-Dalam hitungan detik, server mengembalikan SQL error, menandakan bahwa input kita langsung disuntikkan ke dalam query tanpa disanitasi.
+Dalam sekejap, server menampilkan SQL error, pertanda aplikasi langsung mengeksekusi input tanpa penyaringan.
 
-Error ini memperlihatkan bahwa aplikasi rentan terhadap SQL Injection, penyerang bisa memanipulasi perintah SQL sesuai keinginannya.
+Error ini membuka celah bagi penyerang untuk menyisipkan perintah SQL berbahaya dan memanipulasi database.
 
-Untuk membuktikan dampaknya, kita beralih ke terminal dan menjalankan sqlmap. Pertama, sqlmap mendeteksi bahwa database yang digunakan adalah MySQL.
+Selanjutnya, kita beralih ke terminal untuk menjalankan sqlmap.
+
+Pertama, sqlmap mengidentifikasi bahwa sistem database di belakang aplikasi adalah MySQL.
 
 Kemudian sqlmap melakukan enumerasi dan menemukan nama database: dummyweb.
 
-Berikutnya, kita perintahkan sqlmap untuk men-dump tabel users dalam database tersebut.
+Kita lanjutkan dengan perintah dump pada tabel users di database dummyweb.
 
-Dalam waktu singkat, sqlmap berhasil mengekspor 20 entri data pengguna asli—mulai nama lengkap, username, password, alamat, hingga nomor telepon.
+Hanya dalam hitungan detik, sqlmap berhasil mengekspor 20 entri data pengguna, nama lengkap, username, password, alamat, dan nomor telepon.
 
-Hasil ini menunjukkan betapa mudahnya data sensitif dicuri saat aplikasi tidak melakukan input sanitization dan parameterized queries.
+Hasil ini menunjukkan betapa cepatnya data sensitif bisa dicuri jika aplikasi tidak terlindungi.
 
-Kesimpulannya: satu celah kecil saja cukup membuka pintu bagi penyerang untuk mengakses seluruh informasi pengguna.
+Untuk mencegah serangan seperti ini, penting sekali menerapkan Web Application Firewall (WAF) di lapisan depan aplikasi:
 
-Akhiri dengan himbauan: “Lindungi aplikasi Anda dengan menerapkan prepared statements, validasi input di sisi server, dan prinsip least privilege pada akun database.”
+Pasang WAF dengan rule set OWASP Core Rule Set, khususnya modul SQL Injection.
+
+Aktifkan mode blocking agar payload mencurigakan langsung ditolak, bukan hanya dicatat.
+
+Lakukan tuning berkala untuk meminimalkan false positives tanpa melemahkan proteksi.
+
+Integrasikan log WAF ke sistem SIEM untuk memantau serangan real-time dan melakukan forensik.
+
+Pastikan WAF selalu update signature dan heuristiknya mengikuti teknik serangan terbaru.
+
+Dengan WAF yang terkonfigurasi dengan baik, serangan injeksi SQL bisa diblokir sebelum mencapai aplikasi, menjaga keamanan data pengguna.
+
+Jangan tunggu sampai data bocor—implementasikan WAF Anda sekarang dan lindungi aplikasi dari SQL Injection!
