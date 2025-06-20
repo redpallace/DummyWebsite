@@ -2,6 +2,8 @@
 
 Di depan kita ada sebuah portal web yang terlihat normal dan aman. Ada berita terbaru, dan tentu saja, ada kolom login untuk anggota.
 
+Jika kita memasukkan username atau password yang salah. Kita akan mendapatkan pesan error yang wajar seperti ini. Ini adalah respons yang normal dan aman dari sebuah website. Semuanya terlihat baik-baik saja.
+
 Tapi, seberapa amankah data Anda di baliknya? Mari kita uji dengan satu karakter sederhana.
 
 Di kolom Username, kita ketik karakter kutip satu (') dan klik Login.
