@@ -34,4 +34,4 @@ Pastikan WAF selalu update signature dan heuristiknya mengikuti teknik serangan 
 
 Dengan WAF yang terkonfigurasi dengan baik, serangan injeksi SQL bisa diblokir sebelum mencapai aplikasi, menjaga keamanan data pengguna.
 
-Jangan tunggu sampai data bocor—implementasikan WAF Anda sekarang dan lindungi aplikasi dari SQL Injection!
+Jangan tunggu sampai data bocor implementasikan WAF Anda sekarang dan lindungi aplikasi dari SQL Injection!
