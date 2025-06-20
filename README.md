@@ -4,7 +4,7 @@ Di depan kita ada sebuah portal web yang terlihat normal dan aman. Ada berita te
 
 Tapi, seberapa amankah data Anda di baliknya? Mari kita uji dengan satu karakter sederhana.
 
-Di kolom Username, kita ketik karakter petik (') dan klik Login.
+Di kolom Username, kita ketik karakter kutip satu (') dan klik Login.
 
 Website ini langsung menampilkan pesan error dari database. Ini bukan sekadar error biasa. Ini adalah pertanda bahaya, sebuah celah keamanan fatal yang disebut SQL Injection
 
